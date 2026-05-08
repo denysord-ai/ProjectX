@@ -1,0 +1,99 @@
+# Project Context (LLM Memory Mode)
+
+## TL;DR
+Project name: ProjectX
+
+We are building a Python web app:
+- Upload PDF
+- Ask questions
+- Get AI answers
+- Learn AI APIs (OpenAI → later Gemini, Claude)
+
+Repository:
+https://github.com/denysord-ai/ProjectX
+
+Development environment:
+- IDE: PyCharm
+- Package manager: uv
+- Python: 3.14
+
+Current phase: MVP with OpenAI only
+
+---
+
+## Source of Truth (MANDATORY)
+
+- Backend: FastAPI
+- Frontend: NiceGUI
+- Language: Python
+- MVP provider: OpenAI only
+- Storage:
+  - PostgreSQL (metadata, history)
+  - Local filesystem (PDFs)
+
+- Architecture:
+  - API-first
+  - Clean layers
+  - No overengineering in MVP
+
+---
+
+## Current Scope (ACTIVE WORK)
+
+We are currently building:
+
+- Upload PDF
+- Ask question
+- Get answer from OpenAI
+- Display in UI
+- Save Q&A history
+
+Everything else is OUT OF SCOPE for now.
+
+---
+
+## Decisions (LOCKED)
+
+- Start simple, no full provider abstraction yet
+- Design interfaces so abstraction can be added later
+- No RAG in MVP
+- No background jobs
+- No auth
+- No cloud deployment
+
+---
+
+## Key Entities
+
+- Document
+- Question
+- Answer
+
+---
+
+## System Behavior
+
+Default assumptions:
+- One user
+- One PDF at a time
+- Sync request/response
+- Small to medium PDFs
+
+---
+
+## Roadmap (HIGH LEVEL)
+
+- v0.1 → OpenAI PDF QA
+- v0.2 → add Gemini + Claude
+- v0.3 → compare answers
+- v0.4 → history UI
+- v0.5 → summaries
+- v0.6 → RAG
+
+---
+
+## Open Questions
+
+- Storage: local vs S3
+- RAG: custom vs provider-native
+- Cost tracking
